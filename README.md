@@ -24,5 +24,6 @@ Avoidance of repeated sequences or common patterns.
 Increase awareness about good password practices by offering suggestions and feedback to users when weak or commonly used passwords are detected
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 OUTPUT OF THE PROJECT:
+![Screenshot (3)](https://github.com/user-attachments/assets/374de06d-24fc-4318-a148-d7fe663a027a)
 
 
