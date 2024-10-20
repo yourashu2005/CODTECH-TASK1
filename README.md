@@ -5,8 +5,8 @@ Duration:October-November,2024
 Mentor:SANTOSH
 -------------------------------------
 OVER VIEW OF THE PROJECT
--------------------------------------
 Project:PASSWORD STRENGTH CHECKER
+-------------------------------------
 
 
 OBJECTIVE OF TH PROJECT:
