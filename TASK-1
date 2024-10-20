@@ -1,0 +1,69 @@
+import re
+
+# Function to check the password strength
+def check_password_strength(password):
+    # Initialize score and feedback
+    score = 0
+    feedback = []
+    
+    # Rule 1: Check length
+    if len(password) >= 8:
+        score += 1
+    else:
+        feedback.append("Password should be at least 8 characters long.")
+    
+    # Rule 2: Check for both uppercase and lowercase letters
+    if re.search("[a-z]", password) and re.search("[A-Z]", password):
+        score += 1
+    else:
+        feedback.append("Password should have both uppercase and lowercase letters.")
+    
+    # Rule 3: Check for digits
+    if re.search("[0-9]", password):
+        score += 1
+    else:
+        feedback.append("Password should include at least one number.")
+    
+    # Rule 4: Check for special characters
+    if re.search("[@#$%^&*!()_+|~=`{}\\[\\]:\";'<>?,./-]", password):
+        score += 1
+    else:
+        feedback.append("Password should include at least one special character (e.g. @, #, $).")
+    
+    # Rule 5: Check for common patterns or repeated sequences
+    if re.search(r"(.)\1{2,}", password):
+        feedback.append("Avoid repeating characters.")
+    
+    # Rule 6: Check for common words or patterns like "password", "12345"
+    common_patterns = ["password", "12345", "qwerty", "abc123", "letmein"]
+    if any(pattern in password.lower() for pattern in common_patterns):
+        feedback.append("Avoid common passwords or patterns (e.g., 'password', '12345').")
+    
+    # Determine password strength
+    if score == 4:
+        strength = "Strong"
+    elif score == 3:
+        strength = "Moderate"
+    else:
+        strength = "Weak"
+    
+    return strength, feedback
+
+# Function to provide feedback and assess password
+def assess_password(password):
+    strength, feedback = check_password_strength(password)
+    print(f"\nPassword Strength: {strength}")
+    
+    if feedback:
+        print("Suggestions to improve your password:")
+        for suggestion in feedback:
+            print(f"- {suggestion}")
+    else:
+        print("Your password is strong and secure.")
+
+if __name__ == "__main__":
+    # Input password from user
+    user_password = input("Enter a password to check its strength: ")
+    
+    # Assess the password strength
+    assess_password(user_password)
