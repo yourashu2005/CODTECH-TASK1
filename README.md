@@ -22,3 +22,7 @@ Use of both uppercase and lowercase characters.
 Inclusion of numbers and special characters.
 Avoidance of repeated sequences or common patterns.
 Increase awareness about good password practices by offering suggestions and feedback to users when weak or commonly used passwords are detected
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+OUTPUT OF THE PROJECT:
+
+
